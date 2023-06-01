@@ -26,16 +26,17 @@ namespace Ex04.Menus.Inertfaces
             int? v_UsersChoice = null;
 
             while(v_UsersChoice != k_ExitOrBack)
-            {
-                //clear screen
+            {                
                 PrintMenu();
                 v_UsersChoice = GetUsersChoice();
-              
+                Console.Clear();
+
                 if (v_UsersChoice != k_ExitOrBack)
-                {
+                {                    
                     if (m_SubMenus[(int)v_UsersChoice - 1].IsLeaf())
                     {
-                        m_SubMenus[(int)v_UsersChoice - 1].NotifyListener();                                           
+                        m_SubMenus[(int)v_UsersChoice - 1].NotifyListener();
+                        Console.WriteLine();
                     }
                     else
                     {
